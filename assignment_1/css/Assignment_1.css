@@ -153,12 +153,12 @@
 .contact{
     display: flex;
 }
-.contact-form{
+.contact-form,.contact-info{
     width: 50%;
 }
 .contact-form-title{
     font-weight: 900;
-    font-size: 50px;
+    font-size: 20px;
 }
 .contact-form-text{
     text-transform: capitalize;
@@ -172,10 +172,16 @@
     display: flex;
     width: 100%;
 }
+.row_1{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
 .form-group{
     padding: 10px;
     width: 100%;
 }
+
 .form-control{
     display: block;
     height: 40px;
@@ -193,10 +199,53 @@ input:focus{
 #message{
     height: 280px;
 }
-/*.box{*/
-/*    display: flex;*/
-/*}*/
+/* contact info */
+.item{
+    margin: 10px;
+    line-height: 30px;
+    width: 100%;
+}
+.item .item-icon{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border:  1px solid #3289cc;
+    color: #3289cc;
+    margin-right: 10px;
+    position: relative;
+    left: 1px;
+}
+.item .item-icon i{
+    position: absolute;
+    left: 10px;
+    top: 7px;
+}
 
+h6{
+    font-family: monospace;
+}
+.item-info{
+    position: relative;
+    bottom: 10px;
+}
+.item-info span{
+    color: #aaa;
+}
+.item-info .email{
+    color: #3289cc;
+}
+
+.bold{
+    font-weight: 900;
+    font-size: 20px;
+}
+.time-item{
+    color: #aaa;
+}
+.times{
+    margin-left: 10px;
+}
 body{
     height: 5000px;
 }
