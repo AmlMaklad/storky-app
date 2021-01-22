@@ -3,7 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* general*/
+.container{
+    width: 80%;
+    margin: auto;
 }
 /* start styling the top navbar */
 #top-navbar{
@@ -15,7 +20,7 @@
     list-style-type: none;
     float: right;
     line-height: 60px;
-    margin-right: 50px;
+    /*margin-right: 50px;*/
 }
 #top-navbar ul li{
     display: inline-block;
@@ -53,7 +58,7 @@
 #bottom-navbar ul{
     list-style-type: none;
     float: right;
-    margin-right: 50px;
+    /*margin-right: 50px;*/
     line-height: 60px;
 }
 #bottom-navbar ul li{
@@ -85,7 +90,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 40px;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
 }
 #bottom-navbar ul li.icon{
     margin: 0 2px;
@@ -142,11 +147,55 @@
     border-radius: 3px;
     text-align: center;
 }
+/* end styling the map section */
 
-
-
-
-
+/* start styling the contact section */
+.contact{
+    display: flex;
+}
+.contact-form{
+    width: 50%;
+}
+.contact-form-title{
+    font-weight: 900;
+    font-size: 50px;
+}
+.contact-form-text{
+    text-transform: capitalize;
+    color: #bbbbbb;
+    margin: 8px 0;
+}
+#contact-form{
+    margin: 20px 0;
+}
+.row{
+    display: flex;
+    width: 100%;
+}
+.form-group{
+    padding: 10px;
+    width: 100%;
+}
+.form-control{
+    display: block;
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    outline: none;
+    font-size: 18px;
+}
+input:focus{
+    border: 1px solid #3289cc;
+}
+#message{
+    height: 280px;
+}
+/*.box{*/
+/*    display: flex;*/
+/*}*/
 
 body{
     height: 5000px;

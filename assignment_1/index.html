@@ -11,8 +11,8 @@
 </head>
 <body>
     <!-- Start Header Section -->
-    <header>
-    <nav id="top-navbar">
+    <header class="container">
+        <nav id="top-navbar">
         <ul>
             <li><a href="#"><span class="fa fa-angle-right"></span> About Us</a></li>
             <li><a href="#"><span class="fa fa-angle-right"></span> Contact Us</a></li>
@@ -21,7 +21,7 @@
             <li class="icon"><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
         </ul>
     </nav>
-    <nav id="bottom-navbar">
+        <nav id="bottom-navbar">
         <div id="brand-title">Assignment_1</div>
         <ul>
             <li><a href="#" class="active">home</a></li>
@@ -36,7 +36,7 @@
             <li class="icon"><a href="#"><i class="fa fa-linkedin"></i></a></li>
         </ul>
     </nav>
-</header>
+    </header>
     <!-- End Header Section -->
 
     <!-- Start Map Section-->
@@ -59,7 +59,42 @@
     <!-- End Map Section-->
 
     <!-- Start Contact Us Section-->
-    <section id="contact-us"></section>
+    <section id="contact-us" class="container">
+        <div class="contact">
+            <div class="contact-form">
+                <h1 class="contact-form-title">Contact Us</h1>
+                <p class="contact-form-text">This defines the ability for a flex item to grow if necessary.</p>
+                <form action="" id="contact-form">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" class="form-control" name="fullName">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" name="email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" name="subject">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="10"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h1 class="contact-form-title">Contact Us</h1>
+
+            </div>
+        </div>
+    </section>
     <!-- End Contact US Section-->
 
     <!-- Start Get Started Section-->
