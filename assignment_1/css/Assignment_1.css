@@ -246,6 +246,36 @@ h6{
 .times{
     margin-left: 10px;
 }
+
+/* end styling contact us section*/
+/* start styling getting started section*/
+#get-started{
+    /*height: 10px;*/
+    background-color:rgba(245,245,245,0.7);
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+.get-started-main-text{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.keyword{
+    font-weight: bold;
+}
+.btn-start{
+    background-color: black;
+    width: auto;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-left: 30px;
+    padding: 17px;
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+}
+
 body{
     height: 5000px;
+
 }
