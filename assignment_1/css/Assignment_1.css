@@ -274,8 +274,93 @@ h6{
     border-radius: 6px;
     text-align: center;
 }
+footer{
+    height: 600px;
+    background-color: #22262a;
+}
+.footer{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+}
 
-body{
-    height: 5000px;
+.footer-section{
+    color: #FFFFFF;
+    width: 25%;
+    margin-top: 100px;
+}
+.info{
+    margin: 20px 0;
+}
+.title{
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.contact-icon{
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #666666;
+    display: inline-block;
+    margin-right: 10px;
+}
+.contact-icon:hover{
+    background-color: #3289cc;
+}
+.contact-icon i{
+    position: relative;
+    left: 38%;
+    top: 33%;
+}
 
+.value{
+    color: #bbbbbb;
+}
+.link{
+    cursor: pointer;
+}
+.link a{
+    text-decoration: none;
+    color: #bbbbbb;
+
+}
+.link a:hover{
+    color: #fff;
+}
+.value:last-child{
+    line-height: 30px;
+}
+.newsletter-input{
+    background-color: #3f424559;
+    border-radius: 22px;
+    border: none;
+    width: 80%;
+    color: #FFFFFF;
+}
+.btn-submit{
+    width: auto;
+    background-color: #3289cc;
+}
+.btn-submit:hover{
+    background-color: #5ea3db;
+    cursor: pointer;
+}
+#to-top{
+    width: 50px;
+    height: 50px;
+    background-color: #666666;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+}
+#to-top:hover{
+    cursor: pointer;
+    background: #555252;
 }
