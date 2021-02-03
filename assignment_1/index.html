@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <!--  Page Title IS Here -->
     <title>Assignment_1</title>
+    <meta name="google-site-verification" content="4EqH9A15IQGS2KMS_A9tE4vmgHt3nyo2kR1yP1IBMnI" />
     <!-- Start Call Css Files -->
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/Assignment_1.css">
-<!--    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJ2fU1r_sj-np_MWXuZhwOq_abJzMCG6E&callback=initMap" defer></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBC11SGf9zPkkFmGVZJRc1UcB9hBYWx08&callback=initMap&libraries=&v=weekly"
+            defer
+    ></script>
 </head>
 <body>
     <!-- Start Header Section -->
@@ -33,6 +37,7 @@
             <li><a href="#">portfolio</a></li>
             <li><a href="#">blog</a></li>
             <li><a href="#">shop</a></li>
+            <li><a href="javascript:void(0)" onclick="getWeather()">Weather</a></li>
             <li class="icon"><a href="#"><i class="fa fa-facebook"></i></a></li>
             <li class="icon"><a href="#"><i class="fa fa-twitter"></i></a></li>
             <li class="icon"><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -233,22 +238,92 @@
     <!-- End Footer Section-->
 
     <!-- Start Call Js Files -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/Assignment_1.js"></script>
-    <script>
-        let map;
-        function initMap() {
-            const map = new google.maps.Map(document.getElementById("google-map"), {
-                zoom: 16    ,
-                center: { lat: 30.791722781408133, lng: 30.973675213096804 },
-            });
+</body>
+<script>
 
-            new google.maps.Marker({
-                position: { lat: 30.791722781408133, lng: 30.973675213096804 },
-                map,
-                title: "STORKY_APP",
+    // let map;
+    // function initMap() {
+    //     let storkyLatitude = 30.791722781408133;
+    //     let storkyLongitude = 30.973675213096804;
+    //     const map = new google.maps.Map(document.getElementById("google-map"), {
+    //         zoom: 16    ,
+    //         center: { lat: storkyLatitude, lng: storkyLongitude },
+    //     });
+    //
+    //     new google.maps.Marker({
+    //         position: { lat: storkyLatitude, lng: storkyLongitude },
+    //         map,
+    //         title: "STORKY_APP",
+    //     });
+    // }
+
+   "use strict";
+
+    function initMap() {
+        let storkyLatitude = 30.791722781408133;
+        let storkyLongitude = 30.973675213096804;
+        const myLatLng = {
+            lat: storkyLatitude,
+            lng: storkyLongitude
+        };
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: myLatLng,
+            fullscreenControl: true,
+            zoomControl: true,
+            streetViewControl: true
+        });
+        new google.maps.Marker({
+            position: myLatLng,
+            map,
+            title: "Storky"
+        });
+    }
+
+
+
+        const successCallbackFunction = (response) => {
+
+        const latitude = response.coords.latitude;
+        const longitude = response.coords.longitude;
+
+        const api_key = 'de21084854d50bc2332607e4fe6a51b7';
+        const api = 'http://api.openweathermap.org/data/2.5/weather?lat='+latitude+'&lon='+longitude+'&appid='+api_key;
+
+        const request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200){
+                let response = JSON.parse(this.responseText);
+                swal({
+                    title: "Weather",
+                    text: `Address : ${response.name} , ${response.sys.country}
+                                Temperature : ${Math.round(response.main.temp - 273.15)} C
+                                Feels Like : ${Math.round(response.main.feels_like - 273.15)} C
+                                pressure : ${response.main.pressure} mb
+                                Humidity : ${response.main.humidity} %
+                                Wind Speed : ${Math.round(response.wind.speed)} Km/h`,
+                        icon: "info",
+                        button: "ok",
+                    });
+                }
+            }
+            request.open('get',api,true);
+            request.send();
+        }
+
+        const errorCallbackFunction = (error) => {
+            swal({
+                title: "Sorry!",
+                text: "You can't use the full functionality of our system!",
+                icon: "error",
+                button: "Close",
             });
         }
 
+        function getWeather(){
+            navigator.geolocation.getCurrentPosition(successCallbackFunction,errorCallbackFunction);
+        }
     </script>
-</body>
 </html>
